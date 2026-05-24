@@ -82,35 +82,35 @@ Strong communication and project management skills.""",
         {
             "company": "Nuonuo.com",
             "position": "RPA Lead Developer",
-            "period": "2017.06-2025.04",
+            "period": "Jun 2017 – Apr 2025",
             "highlights": ["Tax RPA development", "Team leadership", "Cross-department collaboration"],
             "icon": "N"
         },
         {
             "company": "Smart Fishing Assistant",
             "position": "Full-stack Developer",
-            "period": "2025.10-Present",
+            "period": "Oct 2025 – Present",
             "highlights": ["AI assistant development", "LangChain applications"],
             "icon": "SF"
         },
         {
             "company": "Shanghai Shinju Network",
             "position": "Test Development Engineer",
-            "period": "2016.06-2017.06",
+            "period": "Jun 2016 – Jun 2017",
             "highlights": ["Performance testing", "Test tool development"],
             "icon": "SJ"
         },
         {
             "company": "Beijing Infomedia Technology",
             "position": "Software Test Development Engineer",
-            "period": "2007.03-2014.06",
+            "period": "Mar 2007 – Jun 2014",
             "highlights": ["Software testing", "Software training", "QA processes"],
             "icon": "BI"
         },
         {
             "company": "Yuanhecaotang (TCM)",
             "position": "TCM Moxibustion Therapist",
-            "period": "2014.06-2016.06",
+            "period": "Jun 2014 – Jun 2016",
             "highlights": ["TCM therapy", "Healthcare"],
             "icon": "YH"
         }
@@ -118,7 +118,7 @@ Strong communication and project management skills.""",
     "education": {
         "school": "Hubei Normal University",
         "major": "Environmental Engineering",
-        "period": "2001-2005"
+        "period": "2001 – 2005"
     },
     "social": {
         "github": "https://github.com/leoomo",
@@ -175,13 +175,18 @@ def generate_html(info: dict) -> str:
             projects_html += f'<div class="{card_class} fade-in" style="--delay: {i * 0.1}s">{card_content}</div>'
 
     # Sort work experience by start date (descending)
+    month_map = {"Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+                 "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12}
+
     def parse_period(period):
-        """Parse period string like '2017.06-2025.04' or '2025.10-Present' to sortable tuple."""
-        if period == "Present":
+        """Parse period like 'Jun 2017 – Apr 2025' or 'Oct 2025 – Present' to sortable tuple."""
+        start = period.split("–")[0].strip()
+        if "Present" in period:
             return (9999, 99)
-        start = period.split("-")[0]
-        parts = start.split(".")
-        return (int(parts[0]), int(parts[1]))
+        parts = start.split()
+        month = month_map.get(parts[0], 1)
+        year = int(parts[1])
+        return (year, month)
 
     sorted_experience = sorted(info["work_experience"], key=lambda x: parse_period(x["period"]), reverse=True)
 

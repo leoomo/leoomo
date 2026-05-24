@@ -27,7 +27,7 @@
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
 | [**Hua Xin AI RAG System**](https://github.com/leoomo/hua_news_ai_rag) | AI-powered knowledge retrieval and RAG Q&A system | LangChain, RAG, Claude Code |
-| **Smart Fishing Assistant** | AI fishing advisor with weather analysis and gear comparison | FastAPI, React, LangChain, WeChat Mini Program |
+| [**Smart Fishing Assistant**](https://github.com/leoomo/fishing_agent) | AI fishing advisor with weather analysis and gear comparison | FastAPI, React, LangChain, WeChat Mini Program |
 | **Tax RPA Automation** | Tax RPA automation solutions for 36 provinces/cities | Python, Selenium, Playwright |
 | **Employee Performance System** | Performance evaluation and data analytics platform | Django, Vue.js, MySQL |
 | **CI/CD Platform** | Automated deployment platform supporting 157 projects | Ansible, Redis, Django |
@@ -36,7 +36,7 @@
 
 ### 💼 Work Experience
 
-- **Smart Fishing Assistant** (2025.10-2025.12) - Full-stack Developer
+- **Smart Fishing Assistant** (2025.10-2026.02) - Full-stack Developer
 - **Nuonuo.com** (2017.06-2025.04) - RPA Lead Developer
 - **Shanghai Shinju Network** (2016.06-2017.06) - Test Development Engineer
 - **Yuanhecaotang (TCM)** (2014.06-2016.06) - TCM Moxibustion Therapist

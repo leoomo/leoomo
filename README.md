@@ -19,6 +19,7 @@
 | **Frontend** | Vue.js, ECharts |
 | **Database** | PostgreSQL, MySQL |
 | **DevOps** | Ansible, Redis, Celery |
+| **Tools** | Claude Code, Codex |
 
 ---
 

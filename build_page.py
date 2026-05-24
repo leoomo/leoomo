@@ -25,7 +25,8 @@ Strong communication and project management skills.""",
         "RPA": ["Selenium", "Playwright", "XPath"],
         "Frontend": ["React", "TypeScript", "Vue.js", "ECharts"],
         "Database": ["PostgreSQL", "MySQL"],
-        "DevOps": ["Ansible", "Redis", "Celery", "GitHub Actions"]
+        "DevOps": ["Ansible", "Redis", "Celery", "GitHub Actions"],
+        "Tools": ["Claude Code", "Codex"]
     },
     "projects": [
         {
@@ -133,7 +134,8 @@ SKILL_COLORS = {
     "RPA": "#F59E0B",
     "Frontend": "#8B5CF6",
     "Database": "#EC4899",
-    "DevOps": "#06B6D4"
+    "DevOps": "#06B6D4",
+    "Tools": "#F97316"
 }
 
 

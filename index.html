@@ -1,992 +1,637 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hua Zeng - Python Developer</title>
-  <meta name="description" content="19 years Python developer with expertise in RPA automation and AI/LLM applications">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0D9488;
-      --primary-dark: #0F766E;
-      --primary-light: #14B8A6;
-      --bg: #F8FAFC;
-      --card-bg: #FFFFFF;
-      --text-primary: #1E293B;
-      --text-secondary: #64748B;
-      --text-muted: #94A3B8;
-      --accent: #0D9488;
-      --gradient-start: #0D9488;
-      --gradient-end: #6366F1;
-      --border: #E2E8F0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-      --shadow-md: 0 4px 12px rgba(13,148,136,0.12);
-      --shadow-lg: 0 8px 30px rgba(13,148,136,0.18);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeng Hua — Python Engineer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
 
-    * {
+  :root {
+    --bg:        #f5f4ed;
+    --surface:   #faf9f5;
+    --fg:        #141413;
+    --fg-muted:  #5e5d59;
+    --fg-tertiary: #87867f;
+    --border:    #f0eee6;
+    --border-warm: #e8e6dc;
+    --accent:    #c96442;
+    --accent-light: #d97757;
+    --ring:      #d1cfc5;
+    --ring-subtle: #dedcd1;
+
+    --font-serif: 'Playfair Display', Georgia, 'Iowan Old Style', serif;
+    --font-sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Arial, sans-serif;
+    --font-mono:  'SF Mono', 'Menlo', 'Consolas', monospace;
+
+    --lh-body: 1.60;
+    --lh-tight: 1.30;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    background: #e8e6dc;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 9.5pt;
+    line-height: var(--lh-body);
+    color: var(--fg);
+  }
+
+  /* ─── Page shell ─── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--bg);
+    padding: 16mm 18mm 14mm 18mm;
+    margin: 20px auto;
+    box-shadow: 0 2px 40px rgba(0,0,0,0.08);
+    position: relative;
+  }
+  .page + .page { margin-top: 0; border-top: 1px solid var(--border-warm); }
+
+  /* ─── Header ─── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5mm;
+  }
+  .header-left { flex: 1; }
+  .header h1 {
+    font-family: var(--font-serif);
+    font-size: 28pt;
+    font-weight: 500;
+    line-height: 1.10;
+    letter-spacing: -0.01em;
+    color: var(--fg);
+    margin-bottom: 2pt;
+  }
+  .header .tagline {
+    font-size: 10pt;
+    color: var(--fg-muted);
+    margin-bottom: 4mm;
+    font-weight: 400;
+  }
+  .contact-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4mm;
+    font-size: 8.2pt;
+    color: var(--fg-tertiary);
+  }
+  .contact-line a {
+    color: var(--fg-muted);
+    text-decoration: none;
+  }
+  .contact-line a:hover { color: var(--accent); }
+  .contact-line .sep { color: var(--border-warm); }
+
+  .photo {
+    width: 28mm;
+    height: 28mm;
+    border-radius: 50%;
+    background: var(--border-warm);
+    flex-shrink: 0;
+    margin-left: 6mm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fg-tertiary);
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 0px 1px var(--ring);
+    overflow: hidden;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ─── Accent rule ─── */
+  .accent-rule {
+    height: 1.5px;
+    background: var(--accent);
+    margin: 4mm 0 5mm 0;
+    width: 18mm;
+  }
+
+  /* ─── Sections ─── */
+  .section { margin-bottom: 5mm; }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 12.5pt;
+    font-weight: 500;
+    line-height: var(--lh-tight);
+    color: var(--fg);
+    margin-bottom: 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.01em;
+  }
+
+  /* ─── Summary ─── */
+  .summary {
+    font-size: 9.2pt;
+    line-height: 1.55;
+    color: var(--fg-muted);
+    max-width: 95%;
+  }
+
+  /* ─── Skills ─── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5mm 5mm;
+  }
+  .skill-row { margin-bottom: 1mm; }
+  .skill-label {
+    font-size: 8pt;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.5mm;
+    letter-spacing: 0.03em;
+  }
+  .skill-items {
+    font-size: 8.5pt;
+    color: var(--fg-muted);
+    line-height: 1.45;
+  }
+
+  /* ─── Experience ─── */
+  .job { margin-bottom: 4.5mm; }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1mm;
+  }
+  .job-title {
+    font-family: var(--font-serif);
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: var(--fg);
+    line-height: var(--lh-tight);
+  }
+  .job-meta {
+    font-size: 8pt;
+    color: var(--fg-tertiary);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .job-company {
+    font-size: 9pt;
+    color: var(--fg-muted);
+    margin-bottom: 1.5mm;
+  }
+  .job ul {
+    list-style: none;
+    padding: 0;
+  }
+  .job li {
+    position: relative;
+    padding-left: 3.5mm;
+    margin-bottom: 0.8mm;
+    font-size: 9pt;
+    color: var(--fg-muted);
+    line-height: 1.50;
+  }
+  .job li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3.2pt;
+    width: 1.2mm;
+    height: 1.2mm;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ─── Projects ─── */
+  .project { margin-bottom: 4mm; }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1mm;
+  }
+  .project-name {
+    font-family: var(--font-serif);
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--fg);
+    line-height: var(--lh-tight);
+  }
+  .project-tech {
+    font-size: 7.5pt;
+    font-family: var(--font-mono);
+    color: var(--fg-tertiary);
+    text-align: right;
+  }
+  .project-link {
+    font-size: 7.5pt;
+    color: var(--accent-light);
+    text-decoration: none;
+  }
+  .project-link:hover { text-decoration: underline; }
+  .project ul {
+    list-style: none;
+    padding: 0;
+  }
+  .project li {
+    position: relative;
+    padding-left: 3.5mm;
+    margin-bottom: 0.6mm;
+    font-size: 8.8pt;
+    color: var(--fg-muted);
+    line-height: 1.48;
+  }
+  .project li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3pt;
+    width: 1.2mm;
+    height: 1.2mm;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ─── Education ─── */
+  .edu { margin-bottom: 2.5mm; }
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5mm;
+  }
+  .edu-school {
+    font-family: var(--font-serif);
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--fg);
+  }
+  .edu-date {
+    font-size: 8pt;
+    color: var(--fg-tertiary);
+  }
+  .edu-detail {
+    font-size: 9pt;
+    color: var(--fg-muted);
+  }
+
+  /* ─── Languages ─── */
+  .langs {
+    display: flex;
+    flex-direction: column;
+    gap: 2mm;
+  }
+  .lang-row {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+  }
+  .lang-name {
+    font-size: 9pt;
+    font-weight: 500;
+    color: var(--fg);
+    width: 20mm;
+    flex-shrink: 0;
+  }
+  .lang-level {
+    font-size: 8.5pt;
+    color: var(--fg-muted);
+  }
+  .lang-bar-track {
+    flex: 1;
+    height: 2.5px;
+    background: var(--border-warm);
+    border-radius: 2px;
+    max-width: 50mm;
+  }
+  .lang-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--accent);
+  }
+
+  /* ─── Print ─── */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  @media print {
+    html, body { background: none; }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      box-shadow: none;
+      padding: 14mm 16mm 12mm 16mm;
+      page-break-after: always;
     }
+    .page:last-child { page-break-after: auto; }
+  }
 
+  /* ─── Responsive preview ─── */
+  @media (max-width: 800px) {
+    .page {
+      width: 100%;
+      min-height: auto;
+      padding: 8mm;
+      margin: 8px;
+    }
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- Pagination-only PDF print fixes. Original file intentionally unchanged. -->
+<style id="pagination-only-print-fix">
+  @page { size: A4; margin: 0; }
+
+  @media print {
+    html,
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text-primary);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    /* Background decoration */
-    .bg-decoration {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .bg-decoration::before {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 60%;
-      height: 80%;
-      background: linear-gradient(135deg, rgba(13,148,136,0.08) 0%, rgba(99,102,241,0.06) 100%);
-      border-radius: 50%;
-      filter: blur(60px);
-      animation: float 20s ease-in-out infinite;
-    }
-
-    .bg-decoration::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: -15%;
-      width: 50%;
-      height: 70%;
-      background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, rgba(13,148,136,0.08) 100%);
-      border-radius: 50%;
-      filter: blur(60px);
-      animation: float 25s ease-in-out infinite reverse;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      33% { transform: translate(30px, -30px) rotate(5deg); }
-      66% { transform: translate(-20px, 20px) rotate(-5deg); }
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes scaleIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .fade-in {
-      animation: fadeInUp 0.6s ease-out backwards;
-      animation-delay: var(--delay, 0s);
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 48px 24px;
-    }
-
-    /* Header */
-    .header {
-      text-align: center;
-      padding: 56px 32px;
-      margin-bottom: 40px;
-      position: relative;
-    }
-
-    .avatar-container {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 24px;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-      font-weight: 700;
-      color: white;
-      box-shadow: var(--shadow-lg);
-      animation: scaleIn 0.5s ease-out;
-      position: relative;
-      z-index: 1;
-    }
-
-    .avatar-ring {
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
-      border-radius: 50%;
-      border: 3px solid transparent;
-      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) border-box;
-      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      animation: pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.02); }
-    }
-
-    .name {
-      font-size: 48px;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--text-primary), var(--primary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-      animation: fadeInUp 0.6s ease-out 0.1s backwards;
-    }
-
-    .title {
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--primary);
-      margin-bottom: 16px;
-      animation: fadeInUp 0.6s ease-out 0.2s backwards;
-    }
-
-    .meta {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-      animation: fadeInUp 0.6s ease-out 0.3s backwards;
-    }
-
-    .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      padding: 6px 14px;
-      background: var(--card-bg);
-      border-radius: 20px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .meta-item svg {
-      width: 16px;
-      height: 16px;
-      color: var(--primary);
-    }
-
-    .bio {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.8;
-      animation: fadeInUp 0.6s ease-out 0.4s backwards;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 48px;
-    }
-
-    .section-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--border), transparent);
-    }
-
-    /* Skills */
-    .skills {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 32px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .skill-group {
-      margin-bottom: 20px;
-    }
-
-    .skill-group:last-child {
-      margin-bottom: 0;
-    }
-
-    .skill-label {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 10px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: color-mix(in srgb, var(--tag-color) 12%, transparent);
-      color: var(--tag-color);
-      border: 1px solid color-mix(in srgb, var(--tag-color) 25%, transparent);
-      transition: all 0.25s ease;
-      cursor: default;
-    }
-
-    .skill-tag:hover {
-      background: color-mix(in srgb, var(--tag-color) 20%, transparent);
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 4px 12px color-mix(in srgb, var(--tag-color) 30%, transparent);
-    }
-
-    /* Projects */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      gap: 16px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--primary), var(--gradient-end));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover {
-      border-color: var(--primary);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
-    }
-
-    .project-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .project-card.featured {
-      grid-column: span 2;
-      background: linear-gradient(135deg, rgba(13,148,136,0.04), rgba(99,102,241,0.04));
-      border-color: rgba(13,148,136,0.2);
-    }
-
-    .project-card.featured::before {
-      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-    }
-
-    .project-icon {
-      width: 48px;
-      height: 48px;
-      min-width: 48px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .project-card.featured .project-icon {
-      width: 56px;
-      height: 56px;
-      min-width: 56px;
-      font-size: 22px;
-    }
-
-    .project-content {
-      flex: 1;
-    }
-
-    .project-name {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-    }
-
-    .project-card.featured .project-name {
-      font-size: 20px;
-    }
-
-    .project-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-
-    .project-tech {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    /* Experience - Timeline */
-    .timeline {
-      position: relative;
-      padding-left: 32px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-bottom: 28px;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-item:last-child .timeline-line {
-      display: none;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -32px;
-      top: 6px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--primary);
-      border: 3px solid var(--bg);
-      box-shadow: 0 0 0 2px var(--primary);
-    }
-
-    .timeline-line {
-      position: absolute;
-      left: -26px;
-      top: 20px;
-      width: 2px;
-      height: calc(100% + 8px);
-      background: linear-gradient(180deg, var(--primary), var(--border));
-    }
-
-    .job-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-    }
-
-    .job-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateX(4px);
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
-    }
-
-    .company-info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .company-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .company {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text-primary);
-      display: block;
-    }
-
-    .period {
-      font-size: 13px;
-      color: var(--text-muted);
-      display: block;
-      margin-top: 2px;
-    }
-
-    .position {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-
-    .highlights {
-      list-style: none;
-      padding-left: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .highlights li {
-      font-size: 13px;
-      color: var(--text-secondary);
-      padding: 4px 12px;
-      background: var(--bg);
-      border-radius: 6px;
-    }
-
-    /* Education */
-    .education-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .education-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .education-card:hover {
-      box-shadow: var(--shadow-md);
-    }
-
-    .edu-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .edu-icon svg {
-      width: 28px;
-      height: 28px;
-      color: white;
-    }
-
-    .edu-info {
-      flex: 1;
-    }
-
-    .school {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .major {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-top: 4px;
-    }
-
-    .edu-period {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--primary);
-      padding: 6px 14px;
-      background: rgba(13,148,136,0.1);
-      border-radius: 20px;
-    }
-
-    /* Contact */
-    .contact {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      border-radius: 24px;
-      padding: 40px;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 60%;
-      height: 200%;
-      background: rgba(255,255,255,0.05);
-      border-radius: 50%;
-      transform: rotate(15deg);
-    }
-
-    .contact-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      position: relative;
-    }
-
-    .contact-subtitle {
-      font-size: 15px;
-      opacity: 0.9;
-      margin-bottom: 28px;
-      position: relative;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 15px;
-      font-weight: 500;
-      color: white;
-      text-decoration: none;
-      padding: 14px 24px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .contact-link:hover {
-      background: rgba(255,255,255,0.25);
-      transform: translateY(-2px);
-    }
-
-    .contact-link svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* Scroll animations */
-    .scroll-animate {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-
-    .scroll-animate.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 32px 0;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    .footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
+      width: 210mm;
+      margin: 0 !important;
+      background: none !important;
+    }
+
+    .page {
+      width: 210mm !important;
+      height: 297mm !important;
+      min-height: 297mm !important;
+      margin: 0 !important;
+      padding: 10.5mm 14.5mm 9mm 14.5mm !important;
+      box-shadow: none !important;
+      overflow: hidden !important;
+      page-break-after: always !important;
+      break-after: page !important;
+    }
+
+    .page:last-child {
+      page-break-after: auto !important;
+      break-after: auto !important;
+    }
+
+    .header { margin-bottom: 3mm !important; }
+    .header h1 { font-size: 24pt !important; }
+    .header .tagline { margin-bottom: 2mm !important; }
+    .contact-line { gap: 2.2mm !important; font-size: 7.4pt !important; }
+    .photo { width: 24mm !important; height: 24mm !important; margin-left: 4mm !important; }
+    .accent-rule { margin: 2.2mm 0 2.8mm 0 !important; }
+    .section { margin-bottom: 2.8mm !important; }
+    .section-title { font-size: 10.8pt !important; margin-bottom: 1.7mm !important; padding-bottom: 0.9mm !important; }
+    .summary { font-size: 8.1pt !important; line-height: 1.34 !important; }
+    .skills-grid { gap: 0.55mm 3.2mm !important; }
+    .skill-row { margin-bottom: 0.25mm !important; }
+    .skill-label { font-size: 7pt !important; margin-bottom: 0.1mm !important; }
+    .skill-items { font-size: 7.3pt !important; line-height: 1.24 !important; }
+    .job { margin-bottom: 2.2mm !important; }
+    .job-header { margin-bottom: 0.45mm !important; }
+    .job-title { font-size: 8.9pt !important; }
+    .job-company { font-size: 7.7pt !important; margin-bottom: 0.55mm !important; }
+    .job-meta { font-size: 6.9pt !important; }
+    .job li { font-size: 7.55pt !important; line-height: 1.25 !important; margin-bottom: 0.2mm !important; padding-left: 2.8mm !important; }
+    .job li::before { top: 2.7pt !important; width: 1mm !important; height: 1mm !important; }
+    .project { margin-bottom: 2.05mm !important; }
+    .project-header { margin-bottom: 0.45mm !important; }
+    .project-name { font-size: 8.8pt !important; }
+    .project-tech, .project-link { font-size: 6.5pt !important; }
+    .project li { font-size: 7.45pt !important; line-height: 1.22 !important; margin-bottom: 0.18mm !important; padding-left: 2.8mm !important; }
+    .project li::before { top: 2.6pt !important; width: 1mm !important; height: 1mm !important; }
+    .edu { margin-bottom: 1.25mm !important; }
+    .edu-school { font-size: 8.5pt !important; }
+    .edu-date { font-size: 6.9pt !important; }
+    .edu-detail { font-size: 7.6pt !important; }
+    .langs { gap: 1mm !important; }
+    .lang-name { font-size: 7.8pt !important; }
+    .lang-level { font-size: 7.3pt !important; }
+  }
+</style>
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        padding: 32px 16px;
-      }
-
-      .name {
-        font-size: 36px;
-      }
-
-      .title {
-        font-size: 18px;
-      }
-
-      .meta {
-        gap: 8px;
-      }
-
-      .meta-item {
-        font-size: 13px;
-        padding: 5px 10px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card.featured {
-        grid-column: span 1;
-      }
-
-      .education-card {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .edu-period {
-        width: fit-content;
-      }
-
-      .contact {
-        padding: 32px 20px;
-      }
-
-      .contact-links {
-        flex-direction: column;
-      }
-
-      .contact-link {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- Background decoration -->
-  <div class="bg-decoration"></div>
 
-  <main class="container">
-    <!-- Header -->
-    <header class="header">
-      <div class="avatar-container">
-        <div class="avatar-ring"></div>
-        <div class="avatar">HZ</div>
+<!-- ════════════════════════════════════════════════════════ PAGE 1 ═══ -->
+<div class="page">
+
+  <header class="header">
+    <div class="header-left">
+      <h1>Zeng Hua</h1>
+      <div class="tagline">Python Engineer</div>
+      <div class="contact-line">
+        <span>Potsdam, Germany</span>
+        <span class="sep">·</span>
+        <a href="mailto:leoomo@gmail.com">leoomo@gmail.com</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/leoomo">github.com/leoomo</a>
+        <span class="sep">·</span>
+        <a href="https://leoomo.github.io/leoomo">leoomo.github.io</a>
       </div>
-      <h1 class="name">Hua Zeng</h1>
-      <p class="title">Python Developer</p>
-      <div class="meta">
-        <span class="meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          19 years total
-        </span>
-        <span class="meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          9 years Python
-        </span>
-        <span class="meta-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Hangzhou
-        </span>
+    </div>
+    <div class="photo" aria-label="Photo">
+      <img src="https://avatars.githubusercontent.com/leoomo" alt="Zeng Hua">
+    </div>
+  </header>
+
+  <div class="accent-rule"></div>
+
+  <!-- Summary -->
+  <section class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary">
+      Python Engineer with 9 years of Python experience and 19 years of total professional experience.
+      Builds LangChain applications, FastAPI/Flask/Django backends, and web automation tools. Led tax RPA solution delivery for 36 local
+      electronic tax bureaus and helped raise workflow success rate to 99.5%. Based in Potsdam, targeting
+      AI Agent Engineer roles in Germany.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section class="section">
+    <div class="section-title">Core Skills</div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <div class="skill-label">AI & LLM</div>
+        <div class="skill-items">LangChain, prompt engineering</div>
       </div>
-      <p class="bio">9 years Python full-stack developer with expertise in RPA automation and AI/LLM application development. Former TCM (Traditional Chinese Medicine) moxibustion practitioner, transitioned to tech with unique cross-domain thinking. Led tax RPA solution design, developed AI products including Hua Xin AI RAG System and Smart Fishing Assistant. Strong communication and project management skills.</p>
-    </header>
-
-    <!-- Skills -->
-    <section class="skills scroll-animate">
-      <h2 class="section-title">Skills</h2>
-      
-        <div class="skill-group fade-in" style="--delay: 0.0s">
-            <div class="skill-label">AI/LLM</div>
-            <div class="skill-tags"><span class="skill-tag" style="--tag-color: #10B981">LangChain</span><span class="skill-tag" style="--tag-color: #10B981">RAG</span><span class="skill-tag" style="--tag-color: #10B981">LLM Apps</span></div>
-        </div>
-        <div class="skill-group fade-in" style="--delay: 0.1s">
-            <div class="skill-label">Backend</div>
-            <div class="skill-tags"><span class="skill-tag" style="--tag-color: #3B82F6">Django</span><span class="skill-tag" style="--tag-color: #3B82F6">Flask</span><span class="skill-tag" style="--tag-color: #3B82F6">FastAPI</span><span class="skill-tag" style="--tag-color: #3B82F6">SQLAlchemy</span></div>
-        </div>
-        <div class="skill-group fade-in" style="--delay: 0.2s">
-            <div class="skill-label">RPA</div>
-            <div class="skill-tags"><span class="skill-tag" style="--tag-color: #F59E0B">Selenium</span><span class="skill-tag" style="--tag-color: #F59E0B">Playwright</span><span class="skill-tag" style="--tag-color: #F59E0B">XPath</span></div>
-        </div>
-        <div class="skill-group fade-in" style="--delay: 0.30000000000000004s">
-            <div class="skill-label">Frontend</div>
-            <div class="skill-tags"><span class="skill-tag" style="--tag-color: #8B5CF6">React</span><span class="skill-tag" style="--tag-color: #8B5CF6">TypeScript</span><span class="skill-tag" style="--tag-color: #8B5CF6">Vue.js</span><span class="skill-tag" style="--tag-color: #8B5CF6">ECharts</span></div>
-        </div>
-        <div class="skill-group fade-in" style="--delay: 0.4s">
-            <div class="skill-label">Database</div>
-            <div class="skill-tags"><span class="skill-tag" style="--tag-color: #EC4899">PostgreSQL</span><span class="skill-tag" style="--tag-color: #EC4899">MySQL</span></div>
-        </div>
-        <div class="skill-group fade-in" style="--delay: 0.5s">
-            <div class="skill-label">DevOps</div>
-            <div class="skill-tags"><span class="skill-tag" style="--tag-color: #06B6D4">Ansible</span><span class="skill-tag" style="--tag-color: #06B6D4">Redis</span><span class="skill-tag" style="--tag-color: #06B6D4">Celery</span><span class="skill-tag" style="--tag-color: #06B6D4">GitHub Actions</span></div>
-        </div>
-        <div class="skill-group fade-in" style="--delay: 0.6000000000000001s">
-            <div class="skill-label">Tools</div>
-            <div class="skill-tags"><span class="skill-tag" style="--tag-color: #F97316">Claude Code</span><span class="skill-tag" style="--tag-color: #F97316">Codex</span></div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="projects scroll-animate">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <a href="https://github.com/leoomo/Classic_Spider" class="project-card featured fade-in" style="--delay: 0.0s" target="_blank">
-            <div class="project-icon">A</div>
-            <div class="project-content">
-                <h3 class="project-name">Classic Spider Solitaire</h3>
-                <p class="project-desc">Cross-platform Spider Solitaire recreation with Tauri, ultra-lightweight and senior-friendly</p>
-                <span class="project-tech">Tauri, Rust, Svelte, Claude Code</span>
-            </div></a><a href="https://github.com/leoomo/german_visa_app_materialschecklist" class="project-card featured fade-in" style="--delay: 0.1s" target="_blank">
-            <div class="project-icon">B</div>
-            <div class="project-content">
-                <h3 class="project-name">German Visa Materials Checklist</h3>
-                <p class="project-desc">Desktop app for preparing German student visa materials with progress tracking</p>
-                <span class="project-tech">Tauri, React, TypeScript, Claude Code</span>
-            </div></a><div class="project-card fade-in" style="--delay: 0.2s">
-            <div class="project-icon">C</div>
-            <div class="project-content">
-                <h3 class="project-name">Smart Fishing Assistant</h3>
-                <p class="project-desc">AI fishing advisor with weather analysis and gear comparison</p>
-                <span class="project-tech">FastAPI, React, LangChain, Claude Code</span>
-            </div></div><a href="https://github.com/leoomo/hua_news_ai_rag" class="project-card fade-in" style="--delay: 0.30000000000000004s" target="_blank">
-            <div class="project-icon">D</div>
-            <div class="project-content">
-                <h3 class="project-name">Hua Xin AI RAG System</h3>
-                <p class="project-desc">AI-powered knowledge retrieval and RAG Q&A system</p>
-                <span class="project-tech">LangChain, RAG, Claude Code</span>
-            </div></a><div class="project-card fade-in" style="--delay: 0.4s">
-            <div class="project-icon">E</div>
-            <div class="project-content">
-                <h3 class="project-name">Tax RPA Automation</h3>
-                <p class="project-desc">Tax RPA automation solutions for 36 provinces/cities</p>
-                <span class="project-tech">Python, Selenium, Playwright</span>
-            </div></div><div class="project-card fade-in" style="--delay: 0.5s">
-            <div class="project-icon">F</div>
-            <div class="project-content">
-                <h3 class="project-name">Employee Performance System</h3>
-                <p class="project-desc">Performance evaluation and data analytics platform</p>
-                <span class="project-tech">Django, Vue.js, MySQL</span>
-            </div></div><div class="project-card fade-in" style="--delay: 0.6000000000000001s">
-            <div class="project-icon">G</div>
-            <div class="project-content">
-                <h3 class="project-name">CI/CD Platform</h3>
-                <p class="project-desc">Automated deployment platform supporting 157 projects</p>
-                <span class="project-tech">Ansible, Redis, Django</span>
-            </div></div>
+      <div class="skill-row">
+        <div class="skill-label">Backend Engineering</div>
+        <div class="skill-items">Python, FastAPI, Flask, Django, SQLAlchemy, REST APIs, Celery, Redis</div>
       </div>
-    </section>
-
-    <!-- Work Experience -->
-    <section class="experience scroll-animate">
-      <h2 class="section-title">Work Experience</h2>
-      <div class="timeline">
-        
-        <div class="timeline-item fade-in" style="--delay: 0.0s">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-            <div class="job-card">
-                <div class="job-header">
-                    <div class="company-info">
-                        <div class="company-icon">N</div>
-                        <div>
-                            <span class="company">Nuonuo.com</span>
-                            <span class="period">Jun 2017 – Apr 2025</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="position">RPA Lead Developer</p>
-                <ul class="highlights"><li>Tax RPA development</li><li>Team leadership</li><li>Cross-department collaboration</li></ul>
-            </div>
-        </div>
-        <div class="timeline-item fade-in" style="--delay: 0.1s">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-            <div class="job-card">
-                <div class="job-header">
-                    <div class="company-info">
-                        <div class="company-icon">SJ</div>
-                        <div>
-                            <span class="company">Shanghai Shinju Network</span>
-                            <span class="period">Jun 2016 – Jun 2017</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="position">Test Development Engineer</p>
-                <ul class="highlights"><li>Performance testing</li><li>Test tool development</li></ul>
-            </div>
-        </div>
-        <div class="timeline-item fade-in" style="--delay: 0.2s">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-            <div class="job-card">
-                <div class="job-header">
-                    <div class="company-info">
-                        <div class="company-icon">YH</div>
-                        <div>
-                            <span class="company">Yuanhecaotang (TCM)</span>
-                            <span class="period">Jun 2014 – Jun 2016</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="position">TCM Moxibustion Therapist</p>
-                <ul class="highlights"><li>TCM therapy</li><li>Healthcare</li></ul>
-            </div>
-        </div>
-        <div class="timeline-item fade-in" style="--delay: 0.30000000000000004s">
-            <div class="timeline-dot"></div>
-            <div class="timeline-line"></div>
-            <div class="job-card">
-                <div class="job-header">
-                    <div class="company-info">
-                        <div class="company-icon">BI</div>
-                        <div>
-                            <span class="company">Beijing Infomedia Technology</span>
-                            <span class="period">Mar 2007 – Jun 2014</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="position">Software Test Development Engineer</p>
-                <ul class="highlights"><li>Software testing</li><li>Software training</li><li>QA processes</li></ul>
-            </div>
-        </div>
+      <div class="skill-row">
+        <div class="skill-label">Automation & RPA</div>
+        <div class="skill-items">Selenium, Playwright, DrissionPage, PyAutoGUI, web form automation, crawler workflows, OCR-assisted data extraction, xpath</div>
       </div>
-    </section>
-
-    <!-- Education -->
-    <section class="education scroll-animate">
-      <h2 class="section-title">Education</h2>
-      <div class="education-list">
-        
-      <div class="education-card">
-        <div class="edu-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="edu-info">
-          <div class="school">XU Exponential University of Applied Sciences</div>
-          <div class="major">Master – Industry 4.0</div>
-        </div>
-        <div class="edu-period">2026 – Present</div>
+      <div class="skill-row">
+        <div class="skill-label">Frontend</div>
+        <div class="skill-items">Vue.js</div>
       </div>
-      <div class="education-card">
-        <div class="edu-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="edu-info">
-          <div class="school">Hubei Normal University</div>
-          <div class="major">Bachelor – Environmental Engineering</div>
-        </div>
-        <div class="edu-period">2001 – 2005</div>
+      <div class="skill-row">
+        <div class="skill-label">Databases & Infrastructure</div>
+        <div class="skill-items">MySQL, ChromaDB, Ansible, Linux, Git, uv, npm</div>
       </div>
+      <div class="skill-row">
+        <div class="skill-label">AI Development Tools</div>
+        <div class="skill-items">Claude Code, Codex, prompt engineering, evaluation workflows</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section class="contact scroll-animate">
-      <h2 class="contact-title">Let's Connect</h2>
-      <p class="contact-subtitle">Feel free to reach out for collaboration or just to say hi!</p>
-      <div class="contact-links">
-        <a href="https://github.com/leoomo" class="contact-link" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="mailto:leoomo@gmail.com" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
-        </a>
+  <!-- Experience -->
+  <section class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">RPA Lead Developer / Software Development Team Leader</span>
+        <span class="job-meta">Jun 2017 – Apr 2025</span>
       </div>
-    </section>
+      <div class="job-company">Nuonuo.com · Hangzhou, China</div>
+      <ul>
+        <li>Led a 4-member RPA development team designing and maintaining tax automation bots for electronic tax bureau workflows.</li>
+        <li>Participated in solution design for 36 local electronic tax bureaus; the Zhejiang tax RPA project reached a monthly average workflow success rate of 99.5%.</li>
+        <li>Designed web form snapshot comparison and network anomaly detection modules to protect data-entry integrity and reduce false error handling.</li>
+        <li>Built configurable old/new interface field mappings and a low-code form-filling strategy with header validation and post-fill data comparison.</li>
+        <li>Reviewed code, evaluated business and technical requirements, coordinated cross-functional issue resolution, and ran monthly operation reviews.</li>
+      </ul>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>Built with passion &middot; <a href="https://github.com/leoomo" target="_blank">View on GitHub</a></p>
-    </footer>
-  </main>
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Development Test Engineer</span>
+        <span class="job-meta">Jun 2016 – Jun 2017</span>
+      </div>
+      <div class="job-company">Shanghai New Centurion Network Information Technology · Hangzhou, China</div>
+      <ul>
+        <li>Built Python-based testing tools and improved test processes for telecom and CRM-related systems.</li>
+        <li>Conducted LoadRunner performance tests for China Mobile interfaces, covering high-concurrency response behavior and abnormal-scenario validation.</li>
+        <li>Helped build production load-testing capability from zero for multiple China Mobile systems; developed SOAP debugging tools with Python/Flask and Python/PyQt.</li>
+      </ul>
+    </div>
 
-  <script>
-    // Scroll animations with Intersection Observer
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Software Test Development / Test and Operations Engineer</span>
+        <span class="job-meta">Mar 2007 – Jun 2014</span>
+      </div>
+      <div class="job-company">Beijing Infomedia Technology · Beijing, China</div>
+      <ul>
+        <li>Tested, deployed, maintained, and trained users on broadcasting software systems for China National Radio, China Radio International, Beijing People's Broadcasting Station, and provincial radio stations.</li>
+      </ul>
+    </div>
+  </section>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
+</div>
 
-    document.querySelectorAll('.scroll-animate').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
+<!-- ════════════════════════════════════════════════════════ PAGE 2 ═══ -->
+<div class="page">
+
+  <section class="section">
+    <div class="section-title">Selected Projects</div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-name">Smart Fishing Assistant — AI Agent Product</span>
+        <span class="project-tech">LangChain · FastAPI · React · TypeScript · WeChat</span>
+      </div>
+      <a class="project-link" href="https://github.com/leoomo/fishing_agent">github.com/leoomo/fishing_agent</a>  <span style="font-size:7.5pt;color:var(--fg-tertiary);">· 2025 – Feb 2026</span>
+      <ul>
+        <li>Built a LangChain 1.0+ AI assistant system with modular agent architecture, FastAPI backend, JWT/RBAC authentication, React/TypeScript admin frontend, and WeChat mini-program integration.</li>
+        <li>Integrated multiple LLM providers (Zhipu AI, Tongyi Qianwen, Doubao, OpenAI) with token usage and API performance monitoring for cost visibility.</li>
+        <li>Implemented weather and location intelligence using Caiyun Weather and Amap APIs, including fishing suitability analysis based on temperature, wind, pressure, humidity, season, and moon phase.</li>
+        <li>Added equipment knowledge, comparison workflows, batch import/review, OCR/image processing, crawler task management, and data persistence. 36 business APIs, 18 frontend components.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-name">Hua News AI Knowledge Base — RAG Platform</span>
+        <span class="project-tech">Flask · SQLAlchemy · Next.js · React · TypeScript</span>
+      </div>
+      <a class="project-link" href="https://github.com/leoomo/hua_news_ai_rag">github.com/leoomo/hua_news_ai_rag</a>
+      <ul>
+        <li>Built an AI-powered news collection, processing, retrieval, and Q&A system with RSS source management, knowledge-base construction, semantic search, and email notifications.</li>
+        <li>Implemented text embedding, vector search, intelligent Q&A, and content summarization with Flask/SQLAlchemy backend and Next.js frontend.</li>
+        <li>Designed knowledge-base filtering, inline metadata editing, batch operations, RSS crawling, model/API configuration, user/role management, and analytics dashboards.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-name">Automated Release System — Internal Deployment Platform</span>
+        <span class="project-tech">Python · Django · Ansible · Redis · MySQL</span>
+      </div>
+      <span style="font-size:7.5pt;color:var(--fg-tertiary);">Nuonuo.com · 2017 – 2018</span>
+      <ul>
+        <li>Independently developed and tested an Ansible-based automated release system with separated release control and execution through Redis messaging.</li>
+        <li>Integrated with the company operations platform; supported 157 project teams after production launch in 2018.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <span class="project-name">Classic Spider Solitaire — Cross-Platform Desktop Product</span>
+        <span class="project-tech">Tauri 2.x · Rust · Svelte 5</span>
+      </div>
+      <a class="project-link" href="https://github.com/leoomo/Classic_Spider">github.com/leoomo/Classic_Spider</a>
+      <ul>
+        <li>Built a Tauri 2.x desktop game with Rust backend logic, Svelte 5 frontend, auto-save, undo/redo, hinting, statistics, vector-card rendering, Rust rule tests, and a 1,000-shuffle simulation test.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <div class="section-title">Education</div>
+    <div class="edu">
+      <div class="edu-header">
+        <span class="edu-school">XU Exponential University of Applied Sciences</span>
+        <span class="edu-date">2026 – Present</span>
+      </div>
+      <div class="edu-detail">Industry 4.0 · Potsdam, Germany</div>
+    </div>
+    <div class="edu">
+      <div class="edu-header">
+        <span class="edu-school">Hubei Normal University</span>
+        <span class="edu-date">2001 – 2005</span>
+      </div>
+      <div class="edu-detail">Bachelor of Engineering, Environmental Engineering · Huangshi, China</div>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section class="section">
+    <div class="section-title">Languages</div>
+    <div class="langs">
+      <div class="lang-row">
+        <span class="lang-name">Chinese</span>
+        <div class="lang-bar-track"><div class="lang-bar-fill" style="width:100%"></div></div>
+        <span class="lang-level">Native</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">English</span>
+        <div class="lang-bar-track"><div class="lang-bar-fill" style="width:55%"></div></div>
+        <span class="lang-level">Working proficiency (Duolingo 105)</span>
+      </div>
+      <div class="lang-row">
+        <span class="lang-name">German</span>
+        <div class="lang-bar-track"><div class="lang-bar-fill" style="width:12%"></div></div>
+        <span class="lang-level">Elementary</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
 </body>
 </html>

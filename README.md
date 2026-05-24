@@ -5,7 +5,7 @@
 
 ### 👨‍💻 About Me
 
-9 years Python full-stack developer with expertise in RPA automation and AI/LLM application development. Former TCM (Traditional Chinese Medicine) moxibustion practitioner, transitioned to tech with unique cross-domain thinking. Led tax RPA solution design, developed AI products including Hua Xin AI RAG System and Smart Fishing Assistant. Strong communication and project management skills.
+9-years Python full-stack developer with expertise in RPA automation  development. Former TCM (Traditional Chinese Medicine) moxibustion practitioner, transitioned to tech with unique cross-domain thinking. Led tax RPA solution design, developed AI products including Hua Xin AI RAG System and Smart Fishing Assistant. Strong communication and project management skills.
 
 ---
 

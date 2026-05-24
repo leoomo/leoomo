@@ -27,10 +27,10 @@
 
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
+| [**Classic Spider Solitaire**](https://github.com/leoomo/Classic_Spider) | Cross-platform Spider Solitaire recreation | Tauri, Rust, Svelte, Claude Code |
+| [**German Visa Materials Checklist**](https://github.com/leoomo/german_visa_app_materialschecklist) | Desktop app for preparing German student visa materials | Tauri, React, TypeScript, Claude Code |
+| [**Smart Fishing Assistant**](https://github.com/leoomo/fishing_agent) | AI fishing advisor with weather analysis and gear comparison | FastAPI, React, LangChain, Claude Code |
 | [**Hua Xin AI RAG System**](https://github.com/leoomo/hua_news_ai_rag) | AI-powered knowledge retrieval and RAG Q&A system | LangChain, RAG, Claude Code |
-| [**Classic Spider Solitaire**](https://github.com/leoomo/Classic_Spider) | Cross-platform Spider Solitaire recreation | Tauri, Rust, Svelte, TypeScript |
-| [**German Visa Materials Checklist**](https://github.com/leoomo/german_visa_app_materialschecklist) | Desktop app for preparing German student visa materials | Tauri, React, TypeScript, Tailwind CSS |
-| [**Smart Fishing Assistant**](https://github.com/leoomo/fishing_agent) | AI fishing advisor with weather analysis and gear comparison | FastAPI, React, LangChain, WeChat Mini Program |
 | **Tax RPA Automation** | Tax RPA automation solutions for 36 provinces/cities | Python, Selenium, Playwright |
 | **Employee Performance System** | Performance evaluation and data analytics platform | Django, Vue.js, MySQL |
 | **CI/CD Platform** | Automated deployment platform supporting 157 projects | Ansible, Redis, Django |

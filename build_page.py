@@ -30,24 +30,31 @@ Strong communication and project management skills.""",
     },
     "projects": [
         {
-            "name": "Hua Xin AI RAG System",
-            "description": "AI-powered knowledge retrieval and RAG Q&A system",
-            "tech": "LangChain, RAG, Claude Code",
-            "url": "https://github.com/leoomo/hua_news_ai_rag",
+            "name": "Classic Spider Solitaire",
+            "description": "Cross-platform Spider Solitaire recreation with Tauri, ultra-lightweight and senior-friendly",
+            "tech": "Tauri, Rust, Svelte, Claude Code",
+            "url": "https://github.com/leoomo/Classic_Spider",
             "featured": True
         },
         {
-            "name": "Classic Spider Solitaire",
-            "description": "Cross-platform Spider Solitaire recreation with Tauri, ultra-lightweight and senior-friendly",
-            "tech": "Tauri, Rust, Svelte, TypeScript",
-            "url": "https://github.com/leoomo/Classic_Spider",
+            "name": "German Visa Materials Checklist",
+            "description": "Desktop app for preparing German student visa materials with progress tracking",
+            "tech": "Tauri, React, TypeScript, Claude Code",
+            "url": "https://github.com/leoomo/german_visa_app_materialschecklist",
             "featured": True
         },
         {
             "name": "Smart Fishing Assistant",
             "description": "AI fishing advisor with weather analysis and gear comparison",
-            "tech": "FastAPI, React, LangChain, WeChat Mini Program",
+            "tech": "FastAPI, React, LangChain, Claude Code",
             "url": None,
+            "featured": False
+        },
+        {
+            "name": "Hua Xin AI RAG System",
+            "description": "AI-powered knowledge retrieval and RAG Q&A system",
+            "tech": "LangChain, RAG, Claude Code",
+            "url": "https://github.com/leoomo/hua_news_ai_rag",
             "featured": False
         },
         {
@@ -55,13 +62,6 @@ Strong communication and project management skills.""",
             "description": "Tax RPA automation solutions for 36 provinces/cities",
             "tech": "Python, Selenium, Playwright",
             "url": None,
-            "featured": False
-        },
-        {
-            "name": "German Visa Materials Checklist",
-            "description": "Desktop app for preparing German student visa materials with progress tracking",
-            "tech": "Tauri, React, TypeScript, Tailwind CSS",
-            "url": "https://github.com/leoomo/german_visa_app_materialschecklist",
             "featured": False
         },
         {

@@ -16,9 +16,9 @@
 | **AI/LLM** | LangChain |
 | **Backend** | Django, Flask, FastAPI, SQLAlchemy |
 | **RPA** | Selenium, Playwright, XPath |
-| **Frontend** | React, TypeScript, Vue.js, ECharts |
+| **Frontend** | Vue.js, ECharts |
 | **Database** | PostgreSQL, MySQL |
-| **DevOps** | Ansible, Redis, Celery, GitHub Actions |
+| **DevOps** | Ansible, Redis, Celery |
 
 ---
 

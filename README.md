@@ -39,7 +39,6 @@
 
 ### 💼 Work Experience
 
-- **Smart Fishing Assistant** (Oct 2025 – Feb 2026) – Full-stack Developer
 - **Nuonuo.com** (Jun 2017 – Apr 2025) – RPA Lead Developer
 - **Shanghai Shinju Network** (Jun 2016 – Jun 2017) – Test Development Engineer
 - **Yuanhecaotang (TCM)** (Jun 2014 – Jun 2016) – TCM Moxibustion Therapist

@@ -88,13 +88,6 @@ Strong communication and project management skills.""",
             "icon": "N"
         },
         {
-            "company": "Smart Fishing Assistant",
-            "position": "Full-stack Developer",
-            "period": "Oct 2025 – Present",
-            "highlights": ["AI assistant development", "LangChain applications"],
-            "icon": "SF"
-        },
-        {
             "company": "Shanghai Shinju Network",
             "position": "Test Development Engineer",
             "period": "Jun 2016 – Jun 2017",

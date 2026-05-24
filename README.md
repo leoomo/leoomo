@@ -13,7 +13,7 @@
 
 | Category | Technologies |
 |----------|-------------|
-| **AI/LLM** | LangChain, RAG, LLM Apps |
+| **AI/LLM** | LangChain |
 | **Backend** | Django, Flask, FastAPI, SQLAlchemy |
 | **RPA** | Selenium, Playwright, XPath |
 | **Frontend** | React, TypeScript, Vue.js, ECharts |

@@ -1,5 +1,5 @@
 # Hi there! 👋 I'm Evan
-**Python Developer** | 9 years Python | 19 years total | Berlin 📍
+**Python Developer** | 9 years Python | 19 years total | Potsdam 📍
 
 ---
 

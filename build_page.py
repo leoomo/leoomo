@@ -121,7 +121,7 @@ Strong communication and project management skills.""",
             "school": "XU Exponential University of Applied Sciences",
             "degree": "Master",
             "major": "Industry 4.0",
-            "period": ""
+            "period": "2026 – Present"
         },
         {
             "school": "Hubei Normal University",
@@ -230,7 +230,7 @@ def generate_html(info: dict) -> str:
     for edu in info["education"]:
         period_html = f'<div class="edu-period">{edu["period"]}</div>' if edu["period"] else ""
         education_html += f'''
-      <div class="education-card" style="margin-bottom: 12px">
+      <div class="education-card">
         <div class="edu-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
         </div>
@@ -756,6 +756,12 @@ def generate_html(info: dict) -> str:
     }}
 
     /* Education */
+    .education-list {{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }}
+
     .education-card {{
       background: var(--card-bg);
       border-radius: 16px;
@@ -1021,7 +1027,9 @@ def generate_html(info: dict) -> str:
     <!-- Education -->
     <section class="education scroll-animate">
       <h2 class="section-title">Education</h2>
-      {education_html}
+      <div class="education-list">
+        {education_html}
+      </div>
     </section>
 
     <!-- Contact -->

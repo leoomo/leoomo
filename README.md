@@ -50,7 +50,7 @@
 ### 🎓 Education
 
 **Hubei Normal University** – Environmental Engineering (2001 – 2005)
-**XU Exponential University of Applied Sciences** – Industry 4.0
+**XU Exponential University of Applied Sciences** – Industry 4.0 (2026 – Present)
 
 ---
 

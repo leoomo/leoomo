@@ -36,6 +36,13 @@ Strong communication and project management skills.""",
             "featured": True
         },
         {
+            "name": "Classic Spider Solitaire",
+            "description": "Cross-platform Spider Solitaire recreation with Tauri, ultra-lightweight and senior-friendly",
+            "tech": "Tauri, Rust, Svelte, TypeScript",
+            "url": "https://github.com/leoomo/Classic_Spider",
+            "featured": True
+        },
+        {
             "name": "Smart Fishing Assistant",
             "description": "AI fishing advisor with weather analysis and gear comparison",
             "tech": "FastAPI, React, LangChain, WeChat Mini Program",
@@ -47,6 +54,13 @@ Strong communication and project management skills.""",
             "description": "Tax RPA automation solutions for 36 provinces/cities",
             "tech": "Python, Selenium, Playwright",
             "url": None,
+            "featured": False
+        },
+        {
+            "name": "German Visa Materials Checklist",
+            "description": "Desktop app for preparing German student visa materials with progress tracking",
+            "tech": "Tauri, React, TypeScript, Tailwind CSS",
+            "url": "https://github.com/leoomo/german_visa_app_materialschecklist",
             "featured": False
         },
         {

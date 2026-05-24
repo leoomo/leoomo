@@ -116,11 +116,20 @@ Strong communication and project management skills.""",
             "icon": "YH"
         }
     ],
-    "education": {
-        "school": "Hubei Normal University",
-        "major": "Environmental Engineering",
-        "period": "2001 – 2005"
-    },
+    "education": [
+        {
+            "school": "XU Exponential University of Applied Sciences",
+            "degree": "Master",
+            "major": "Industry 4.0",
+            "period": ""
+        },
+        {
+            "school": "Hubei Normal University",
+            "degree": "Bachelor",
+            "major": "Environmental Engineering",
+            "period": "2001 – 2005"
+        }
+    ],
     "social": {
         "github": "https://github.com/leoomo",
         "email": "leoomo@gmail.com"
@@ -215,6 +224,22 @@ def generate_html(info: dict) -> str:
                 <ul class="highlights">{highlights}</ul>
             </div>
         </div>'''
+
+    # Build education section
+    education_html = ""
+    for edu in info["education"]:
+        period_html = f'<div class="edu-period">{edu["period"]}</div>' if edu["period"] else ""
+        education_html += f'''
+      <div class="education-card" style="margin-bottom: 12px">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="edu-info">
+          <div class="school">{edu["school"]}</div>
+          <div class="major">{edu["degree"]} – {edu["major"]}</div>
+        </div>
+        {period_html}
+      </div>'''
 
     html = f'''<!DOCTYPE html>
 <html lang="en">
@@ -996,16 +1021,7 @@ def generate_html(info: dict) -> str:
     <!-- Education -->
     <section class="education scroll-animate">
       <h2 class="section-title">Education</h2>
-      <div class="education-card">
-        <div class="edu-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="edu-info">
-          <div class="school">{info['education']['school']}</div>
-          <div class="major">{info['education']['major']}</div>
-        </div>
-        <div class="edu-period">{info['education']['period']}</div>
-      </div>
+      {education_html}
     </section>
 
     <!-- Contact -->
